@@ -33,7 +33,7 @@ This project builds and evaluates a machine learning pipeline to predict used ca
 
 ```
 CarPrice/
-├── [01_data_gathering](https://github.com/reharabi/Car_Price_Prediction_ML/blob/main/notebooks/01_data_gathering%20(final).ipynb)          # Load raw CSV into Databricks Unity Catalog
+├── (https://github.com/reharabi/Car_Price_Prediction_ML/blob/main/notebooks/01_data_gathering%20(final).ipynb)          # Load raw CSV into Databricks Unity Catalog
 ├── 02_data_cleaning.ipynb           # Remove corrupt data, standardise columns
 ├── 03_eda.ipynb                     # Exploratory Data Analysis — distributions & correlations
 ├── 04_feature_engineering.ipynb     # Create car_age, mileage_per_year, make_category
