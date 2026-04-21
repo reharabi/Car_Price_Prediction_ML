@@ -19,13 +19,13 @@ This project builds and evaluates a machine learning pipeline to predict used ca
 
 | Model | Approach | Test RMSE (Primary) | Test MAE |
 |---|---|---|---|
-| Linear Regression | Manual (NB06/07) | $4,428 | $2,609 |
-| Random Forest | Manual (NB06/07) | $3,280 | $1,552 |
-| XGBoost (best manual) | Manual (NB06/07) | $2,563 | $1,211 |
+| Linear Regression | Manual (NB06/07) | $5,235 | $2,607 |
+| Random Forest | Manual (NB06/07) | $3,382 | $1,539 |
+| XGBoost (best manual) | Manual (NB06/07) | $2,551 | $1,219 |
 | XGBoost (Featuretools) | Automated features (NB08) | $2,810 | $1,248 |
 | **PyCaret CatBoost** | **Fully automated (NB08)** | **$2,515** | **$1,162** |
 
-**Winner: PyCaret CatBoost** — beats the best manual model by **$48 RMSE** with zero manual model selection effort.
+**Winner: PyCaret CatBoost** — beats the best manual model by **$36 RMSE** with zero manual model selection effort.
 
 ---
 
