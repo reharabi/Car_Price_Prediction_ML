@@ -81,7 +81,7 @@ Raw CSV (cars.csv)
       ▼
 [NB07] Prediction & Evaluation
    └─→ workspace.default.carprice_project_evaluation_results
-   └─→ Best model: XGBoost  (Test RMSE $2,563 · Test MAE $1,211)
+   └─→ Best model: XGBoost  (Test RMSE $2,551 · Test MAE $1,219)
 ```
 
 Each notebook reads from and writes to the Unity Catalog, forming a traceable, reproducible data lineage. All preprocessing steps are **fit on training data only** to prevent leakage.
@@ -157,9 +157,9 @@ Featuretools Deep Feature Synthesis applied transformation primitives (`add`, `s
 
 | Model | Key Config | Test RMSE | Test MAE | Overfitting |
 |---|---|---|---|---|
-| Linear Regression | Default sklearn | $4,428 | $2,609 | No |
-| Random Forest | max_depth=15, min_samples_leaf=5 | $3,280 | $1,552 | No |
-| XGBoost | n_estimators=100, lr=0.1 | $2,563 | $1,211 | No |
+| Linear Regression | Default sklearn | $5,235 | $2,607 | No |
+| Random Forest | max_depth=15, min_samples_leaf=5 | $3,382 | $1,539 | No |
+| XGBoost | n_estimators=100, lr=0.1 | $2,551 | $1,219 | No |
 | Decision Tree | max_depth=10 | Higher than RF | — | No |
 
 All models logged to **MLflow** with train RMSE, test RMSE, train MAE, test MAE, and R² (reference only).
@@ -190,6 +190,8 @@ Three representative cars explained from the test set:
 | Luxury | $190,141 | $119,323 | $70,818 (37%) — luxury tail underfitting |
 
 Key drivers identified by LIME: `year`, `mileage_km`, `make_category`, `segment`.
+
+**LR key coefficients:** EV premium +$22,837 | Porsche +$10,533 | GAZ +$8,518 | rear-drive −$4,739 | car_age −$312/year
 
 ### SHAP (Global + Local)
 - **SHAP baseline (expected value):** $7,407
@@ -253,3 +255,4 @@ MAE is reported as a secondary metric for interpretability.
 - **R² excluded from model selection:** Only RMSE and MAE used for ranking — R² is misleading on skewed distributions
 - **Log transform rejected:** Applying log(price) distorts the error metric interpretation; errors become percentage-based rather than dollar-based, which is less actionable
 - **MLflow tracking:** All Databricks model runs logged with full metrics for reproducibility and comparison
+
