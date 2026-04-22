@@ -79,7 +79,7 @@ Cleaning steps:
 2. **Text standardisation:** Lowercase all string values for consistency
 3. **Corrupt data removal (rule-based):**
    - Mileage = 0 for non-electric cars (physically impossible)
-   - Price = 0 or clearly placeholder values
+   - Price = 100 0r less 
    - Exact duplicate rows
 4. **Missing value reporting:** Identified and documented, but NOT imputed here
 
@@ -97,7 +97,6 @@ Read-only analysis — no output table. Key findings that informed downstream de
 | `mileage_km` has negative correlation with price | Kept as-is, also used in `mileage_per_year` |
 | Price is heavily right-skewed (mean >> median) | Chose RMSE over MAE; rejected log-transform |
 | `volume_cm3` has 47 missing values (all EVs) | Impute with 0 (genuine zero, not missing) in NB05 |
-| Automatic transmission, AWD, higher segment → higher price | Confirms categorical features are predictive |
 
 **EDA insights on price drivers:**
 - **Strongest features:** `car_age`, `mileage_km`, `make_category`, `segment`
@@ -391,7 +390,7 @@ predicted_price = $7,407 + SHAP(year) + SHAP(mileage) + SHAP(volume_cm3) + ...
 | Limitation | Impact | Mitigation |
 |---|---|---|
 | Very few training examples below $500 | Model extrapolates to negative prices at extreme low end | Apply post-prediction price floor |
-| Very few training examples above $50,000 | Luxury cars underestimated by 30–40% | More luxury data; separate luxury model |
+| Very few training examples above $100,000 | Luxury cars underestimated by 30–40% | More luxury data; separate luxury model |
 | `price_category` bins based on percentiles | Budget/mid/luxury definitions are relative, not absolute | Fixed at 33rd/66th percentile of this dataset |
 | NB08 replicates NB02+NB04+NB05 manually | Risk of subtle divergence from Databricks pipeline | Verified dataset shapes match at each stage |
 | Featuretools DFS on 3 columns only | Limited feature diversity from DFS | All 7 categorical features rejoined manually |
