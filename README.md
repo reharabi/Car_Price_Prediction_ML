@@ -29,21 +29,21 @@ This project builds and evaluates a machine learning pipeline to predict used ca
 
 ---
 
-## Repository Structure
++## Repository Structure
++ 
++| File | Description |
++|---|---|
++| [01 — Data Gathering](https://github.com/reharabi/Car_Price_Prediction_ML/blob/main/notebooks/01_data_gathering%20(final).ipynb) | Load raw CSV into Databricks Unity Catalog |
++| [02 — Data Cleaning](https://github.com/reharabi/Car_Price_Prediction_ML/blob/main/notebooks/02_data_cleaning%20(final).ipynb) | Remove corrupt data, standardise columns |
++| [03 — EDA](https://github.com/reharabi/Car_Price_Prediction_ML/blob/main/notebooks/03_eda%20(final).ipynb) | Exploratory Data Analysis — distributions & correlations |
++| [04 — Feature Engineering](https://github.com/reharabi/Car_Price_Prediction_ML/blob/main/notebooks/04_Feature_engineering%20(final).ipynb) | Create car_age, mileage_per_year, make_category |
++| [05 — Preprocessing](https://github.com/reharabi/Car_Price_Prediction_ML/blob/main/notebooks/05_preprocessing%20(final).ipynb) | Stratified split, imputation, scaling, OHE |
++| [06 — Model Training](https://github.com/reharabi/Car_Price_Prediction_ML/blob/main/notebooks/06_model_training%20(final).ipynb) | Train LR, RF, XGBoost, Decision Tree — MLflow logging |
++| [07 — Prediction & Evaluation](https://github.com/reharabi/Car_Price_Prediction_ML/blob/main/notebooks/07_prediction_evaluation%20(final).ipynb) | Evaluate models, select best, residual analysis |
++| [08 — PyCaret & Interpretability](https://github.com/reharabi/Car_Price_Prediction_ML/blob/main/notebooks/08_pycaret_comparison%20(final).ipynb) | AutoML (PyCaret) + Featuretools + LIME + SHAP (Colab) |
++| [TECHNICAL_ANALYSIS.md](TECHNICAL_ANALYSIS.md) | Full methodology and engineering decisions |
++| [EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md) | Non-technical summary for stakeholders |
 
-
-CarPrice/
-├── [Data Gathering](https://github.com/reharabi/Car_Price_Prediction_ML/blob/main/notebooks/01_data_gathering%20(final).ipynb)          # Load raw CSV into Databricks Unity Catalog
-├── [Data Cleaning](https://github.com/reharabi/Car_Price_Prediction_ML/blob/main/notebooks/02_data_cleaning%20(final).ipynb)           # Remove corrupt data, standardise columns
-├── [EDA](https://github.com/reharabi/Car_Price_Prediction_ML/blob/main/notebooks/03_eda%20(final).ipynb)                     # Exploratory Data Analysis — distributions & correlations
-├── [Feature Engineering](https://github.com/reharabi/Car_Price_Prediction_ML/blob/main/notebooks/04_Feature_engineering%20(final).ipynb)     # Create car_age, mileage_per_year, make_category
-├── [Preprocessing](https://github.com/reharabi/Car_Price_Prediction_ML/blob/main/notebooks/05_preprocessing%20(final).ipynb)           # Stratified split, imputation, scaling, OHE
-├── [Model Training](https://github.com/reharabi/Car_Price_Prediction_ML/blob/main/notebooks/06_model_training%20(final).ipynb)          # Train LR, RF, XGBoost, Decision Tree — MLflow logging
-├── [Prediction Evaluation](https://github.com/reharabi/Car_Price_Prediction_ML/blob/main/notebooks/07_prediction_evaluation%20(final).ipynb)   # Evaluate models, select best, SHAP/residual analysis
-├── [Pycaret Comparison](https://github.com/reharabi/Car_Price_Prediction_ML/blob/main/notebooks/08_pycaret_comparison%20(final).ipynb)      # AutoML (PyCaret) + Featuretools + LIME + SHAP (Colab)
-├── README.md                        # This file
-├── TECHNICAL_ANALYSIS.md            # Full methodology and engineering decisions
-└── EXECUTIVE_SUMMARY.md             # Non-technical summary for stakeholders
 
 
 ---
